@@ -26,29 +26,25 @@ function getHumanChoice() {
     getHumanChoice(); 
 }
 
-function playGame() { 
-let humanSelection = getHumanChoice(); 
-let computerSelection = getComputerChoice();   
-let i = 1; 
+function playGame() {  
+let i = 0; 
 
 while(i < 5){
+        let humanSelection = getHumanChoice(); 
+        let computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection); 
-        console.log(`Your Score is : ${humanScore} and Computer Score is : ${computerScore} .`);
-        humanSelection = getHumanChoice(); 
-        computerSelection = getComputerChoice(); 
+        console.log(`Your Score is : ${humanScore} and Computer Score is : ${computerScore} .`); 
         i++; 
 }
 
 if (i === 5 && humanScore <= computerScore) { 
-    console.log("You lose !");
-    computerScore++; 
+    console.log("You lose !"); 
     console.log(`Your Score is : ${humanScore} and Computer Score is : ${computerScore} .`);
     
 } else if (i === 5 && humanScore > computerScore) {
     console.log("You win !"); 
-    humanScore++; 
     console.log(`Your Score is : ${humanScore} and Computer Score is : ${computerScore} .`); 
-} 
+}
 
 function playRound(humanChoice, computerChoice) { 
     if (humanChoice === computerChoice) { 
@@ -74,6 +70,5 @@ function playRound(humanChoice, computerChoice) {
      }
  }
 }
-
 playGame();
 
